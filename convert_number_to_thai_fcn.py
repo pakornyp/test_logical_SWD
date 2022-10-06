@@ -25,11 +25,10 @@ def convert_number_to_thai_fcn(input_number):
             if value != 0:
                 if value == 2 and digit == 1:
                     thai_text = except_pattern[value] + digit_pattern[digit] + thai_text
-                elif value == 1 and digit == 0:
+                elif value == 1 and digit == 0 and count_digit != 1:
                     thai_text = except_pattern[value] + digit_pattern[digit] + thai_text
                 elif value == 1 and digit == 1:
                     thai_text = digit_pattern[digit] + thai_text
                 else:
                     thai_text = thai_pattern[value] + digit_pattern[digit] + thai_text
-
-        print(thai_text)
+    return thai_text
